@@ -1,16 +1,74 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 💰 Tip Calculator (React Practice)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple yet functional Tip Calculator built with **React.js**. This project was created as a practical exercise to master React state management and component communication.
 
-## React Compiler
+## 🎯 Purpose of this Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The main goal of this exercise was to practice:
 
-## Expanding the ESLint configuration
+* **State Management:** Using the `useState` hook to handle user inputs and real-time calculations.
+* **Props Handling:** Passing data and functions from a parent component to child components to maintain a clean and modular structure.
+* **Logic Implementation:** Executing a multi-step mathematical formula based on user interaction.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ How it Works
+
+The calculator determines the tip based on the average satisfaction level of two people:
+
+1. The user enters the **Bill Amount**.
+2. The user selects **their satisfaction percentage** (e.g., 0%, 5%, 10%, 20%).
+3. The user selects **their friend's satisfaction percentage**.
+4. The app calculates the **average percentage**, applies it to the bill, and displays the total.
+
+### The Calculation Logic
+
+To ensure accuracy, the app follows this mathematical order:
+
+
+---
+
+## 🛠️ Technical Implementation
+
+* **Lifting State Up:** All critical states (bill, percentages) are managed in the parent component and shared via props.
+* **Modular Components:** The UI is split into smaller, reusable pieces (Input, Select, Output).
+* **Derived State:** Instead of creating extra states for the results, calculations are performed directly during rendering for better performance.
+
+## 🧠 Challenges & Solutions
+
+The main challenge was **ensuring the correct order of operations** in the calculation logic. I had to ensure that the percentages were averaged correctly and treated as numbers (not strings) before calculating the final tip amount. Solving this helped me better understand data type handling in JavaScript.
+
+---
+
+## 🚀 Future Roadmap
+
+Since this version focuses on core logic, I plan to:
+
+* [ ] Add a **Reset** button to clear all inputs.
+* [ ] Style the UI using **Tailwind CSS** or **CSS Modules**.
+* [ ] Make the design **Responsive** for mobile users.
+
+## 📦 Installation & Setup
+
+1. Clone the repository:
+```bash
+git clone [your-repo-link]
+
+```
+
+
+2. Install dependencies:
+```bash
+npm install
+
+```
+
+
+3. Run the app:
+```bash
+npm start
+
+```
+
